@@ -1,0 +1,11 @@
+/Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/bin/Debug/net9.0/Library.MedicalPractice.deps.json
+/Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/bin/Debug/net9.0/Library.MedicalPractice.dll
+/Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/bin/Debug/net9.0/Library.MedicalPractice.pdb
+/Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/obj/Debug/net9.0/Library.MedicalPractice.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/obj/Debug/net9.0/Library.MedicalPractice.AssemblyInfoInputs.cache
+/Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/obj/Debug/net9.0/Library.MedicalPractice.AssemblyInfo.cs
+/Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/obj/Debug/net9.0/Library.MedicalPractice.csproj.CoreCompileInputs.cache
+/Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/obj/Debug/net9.0/Library.MedicalPractice.dll
+/Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/obj/Debug/net9.0/refint/Library.MedicalPractice.dll
+/Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/obj/Debug/net9.0/Library.MedicalPractice.pdb
+/Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/obj/Debug/net9.0/ref/Library.MedicalPractice.dll
