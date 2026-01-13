@@ -9,3 +9,5 @@
 /Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/obj/Debug/net9.0/refint/Library.MedicalPractice.dll
 /Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/obj/Debug/net9.0/Library.MedicalPractice.pdb
 /Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/obj/Debug/net9.0/ref/Library.MedicalPractice.dll
+/Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/obj/Debug/net9.0/Library.MedicalPractice.sourcelink.json
+/Users/pedrodelana/Projects/MedicalPractice/Library.MedicalPractice/obj/Debug/net9.0/Library.MedicalPractice.csproj.AssemblyReference.cache

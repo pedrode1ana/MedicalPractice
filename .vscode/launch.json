@@ -1,0 +1,47 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "API (Debug)",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "/Users/pedrodelana/.dotnet/dotnet",
+      "args": [
+        "run",
+        "--project",
+        "Api.MedicalPractice/Api.MedicalPractice.csproj"
+      ],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "DOTNET_ROOT": "/Users/pedrodelana/.dotnet",
+        "PATH": "/Users/pedrodelana/.dotnet:/Users/pedrodelana/.dotnet/tools:${env:PATH}"
+      },
+      "launchBrowser": {
+        "enabled": true,
+        "url": "http://localhost:5158/swagger"
+      },
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "MAUI (Mac Catalyst, Run Only)",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "/Users/pedrodelana/.dotnet/dotnet",
+      "args": [
+        "run",
+        "-f",
+        "net8.0-maccatalyst",
+        "-r",
+        "maccatalyst-arm64",
+        "--project",
+        "Maui.MedicalPractice/Maui.MedicalPractice.csproj"
+      ],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "DOTNET_ROOT": "/Users/pedrodelana/.dotnet",
+        "PATH": "/Users/pedrodelana/.dotnet:/Users/pedrodelana/.dotnet/tools:${env:PATH}"
+      },
+      "console": "integratedTerminal"
+    }
+  ]
+}

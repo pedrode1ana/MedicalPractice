@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="Maui.MedicalPractice.app/Contents/MacOS/Maui.MedicalPractice">
+      <IsAppExtension>false</IsAppExtension>
+      <BCSymbolMapName>Maui.MedicalPractice.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>Maui.MedicalPractice.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/pedrodelana/Projects/MedicalPractice/Maui.MedicalPractice/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/mtouch-symbols.list</SymbolFile>
+      <DSymName>Maui.MedicalPractice.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/pedrodelana/Projects/MedicalPractice/Maui.MedicalPractice</SourceProjectPath>
+      <IsXPCService></IsXPCService>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>

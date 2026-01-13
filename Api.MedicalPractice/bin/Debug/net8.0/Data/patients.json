@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 1,
+    "FirstName": "John",
+    "LastName": "Snow",
+    "Address": "123 Winterfell Ave",
+    "Birthdate": "2000-12-12",
+    "Race": "White",
+    "Gender": "Male"
+  },
+  {
+    "Id": 2,
+    "FirstName": "Sansa",
+    "LastName": "Stark",
+    "Address": "Winterfell Throne",
+    "Birthdate": "2000-12-12",
+    "Race": "White",
+    "Gender": "Female"
+  }
+]

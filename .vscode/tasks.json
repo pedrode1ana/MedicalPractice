@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-sln",
+      "type": "shell",
+      "command": "/Users/pedrodelana/.dotnet/dotnet",
+      "args": ["build", "MedicalPractice.sln"],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "DOTNET_ROOT": "/Users/pedrodelana/.dotnet",
+          "PATH": "/Users/pedrodelana/.dotnet:/Users/pedrodelana/.dotnet/tools:${env:PATH}"
+        }
+      },
+      "problemMatcher": "$msCompile",
+      "group": "build"
+    }
+  ]
+}

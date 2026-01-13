@@ -1,0 +1,47 @@
+[
+  {
+    "Id": 1,
+    "FirstName": "John",
+    "LastName": "Snow",
+    "Address": "123 Winterfell Ave",
+    "Birthdate": "2000-12-12",
+    "Race": "White",
+    "Gender": "Male"
+  },
+  {
+    "Id": 2,
+    "FirstName": "Sansa",
+    "LastName": "Stark",
+    "Address": "Winterfell Throne",
+    "Birthdate": "2000-12-12",
+    "Race": "White",
+    "Gender": "Female"
+  },
+  {
+    "Id": 3,
+    "FirstName": "Jane",
+    "LastName": "Doe",
+    "Address": "123 Ave",
+    "Birthdate": "2000-12-12",
+    "Race": "white",
+    "Gender": "female"
+  },
+  {
+    "Id": 4,
+    "FirstName": "Harry",
+    "LastName": "Potter",
+    "Address": "123 UnderStair",
+    "Birthdate": "1996-05-29",
+    "Race": "White",
+    "Gender": "Male"
+  },
+  {
+    "Id": 5,
+    "FirstName": "John",
+    "LastName": "Smith",
+    "Address": "123 Main st",
+    "Birthdate": "2004-10-23",
+    "Race": "White",
+    "Gender": "Male"
+  }
+]

@@ -8,6 +8,9 @@ public class PatientServiceProxy
 {
     // private backing store
     private readonly List<Patient?> _patients;
+    private bool _isLoaded;
+    private Task? _refreshTask;
+    private readonly WebRequestHandler _http = new();
 
     // one instance
     private static PatientServiceProxy? _instance;
@@ -20,30 +23,145 @@ public class PatientServiceProxy
     }
 
     // expose list 
-    public List<Patient?> Patients => _patients;
+    public List<Patient?> Patients
+    {
+        get
+        {
+            if (!_isLoaded) RefreshFromApi();
+            return _patients;
+        }
+    }
 
-    public Patient? AddOrUpdate(Patient? patient)
+    public async Task EnsureLoadedAsync()
+    {
+        if (_isLoaded) return;
+        await RefreshFromApiAsync().ConfigureAwait(false);
+    }
+
+    public async Task RefreshFromApiAsync()
+    {
+        if (_refreshTask is { IsCompleted: false })
+        {
+            await _refreshTask.ConfigureAwait(false);
+            return;
+        }
+
+        _refreshTask = RefreshInternalAsync();
+        await _refreshTask.ConfigureAwait(false);
+    }
+
+    private async Task RefreshInternalAsync()
+    {
+        try
+        {
+            var patients = await _http.GetAsync<List<Patient>>("patients").ConfigureAwait(false);
+            if (patients is not null)
+            {
+                _patients.Clear();
+                _patients.AddRange(patients);
+            }
+        }
+        catch
+        {
+            // if the API is unavailable, keep whatever is in memory
+        }
+        finally
+        {
+            _isLoaded = true;
+            _refreshTask = null;
+        }
+    }
+
+    public void RefreshFromApi() => RefreshFromApiAsync().GetAwaiter().GetResult();
+
+    public async Task<Patient?> AddOrUpdateAsync(Patient? patient)
     {
         if (patient is null) return null;
 
-        // patient model assigns Id if non just add 
+        if (!_isLoaded) await RefreshFromApiAsync().ConfigureAwait(false);
+
+        try
+        {
+            Patient? result;
+            var exists = _patients.Any(p => p?.Id == patient.Id);
+
+            if (!exists)
+            {
+                result = await _http.PostAsync<Patient>("patients", patient).ConfigureAwait(false);
+            }
+            else
+            {
+                result = await _http.PutAsync<Patient>($"patients/{patient.Id}", patient).ConfigureAwait(false);
+            }
+
+            if (result != null) UpsertLocal(result);
+        }
+        catch
+        {
+            // fall back handled below
+        }
+
+        // fall back to in-memory behavior when API is unavailable or returned null
         var existing = _patients.FirstOrDefault(p => p?.Id == patient.Id);
         if (existing is null)
         {
             _patients.Add(patient);
         }
-        // else: already in list; caller mutates fields directly
         return patient;
     }
 
-    public Patient? Delete(int id)
+    public Patient? AddOrUpdate(Patient? patient) => AddOrUpdateAsync(patient).GetAwaiter().GetResult();
+
+    public async Task<Patient?> DeleteAsync(int id)
     {
+        if (!_isLoaded) await RefreshFromApiAsync().ConfigureAwait(false);
+
         var toDelete = _patients.FirstOrDefault(p => p?.Id == id);
-        if (toDelete != null)
+        if (toDelete != null) _patients.Remove(toDelete);
+
+        try
         {
-            _patients.Remove(toDelete);
+            await _http.DeleteAsync($"patients/{id}").ConfigureAwait(false);
         }
+        catch
+        {
+            // ignore remote failures; local list is already updated
+        }
+
         return toDelete;
+    }
+
+    public Patient? Delete(int id) => DeleteAsync(id).GetAwaiter().GetResult();
+
+    public async Task<IEnumerable<Patient?>> SearchAsync(string query)
+    {
+        if (!_isLoaded) await RefreshFromApiAsync().ConfigureAwait(false);
+
+        if (string.IsNullOrWhiteSpace(query))
+            return Patients;
+
+        try
+        {
+            var results = await _http.GetAsync<List<Patient>>($"patients/search?q={Uri.EscapeDataString(query)}").ConfigureAwait(false);
+            return results ?? Enumerable.Empty<Patient>();
+        }
+        catch
+        {
+            return _patients.Where(p =>
+                p != null &&
+                ((p.FirstName?.Contains(query, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                 (p.LastName?.Contains(query, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                 (p.Address?.Contains(query, StringComparison.OrdinalIgnoreCase) ?? false)));
+        }
+    }
+
+    public IEnumerable<Patient?> Search(string query) => SearchAsync(query).GetAwaiter().GetResult();
+
+    private void UpsertLocal(Patient patient)
+    {
+        var existing = _patients.FirstOrDefault(p => p?.Id == patient.Id);
+        if (existing is not null) _patients.Remove(existing);
+        _patients.Add(patient);
     }
 }
 
@@ -218,5 +336,3 @@ public class AppointmentServiceProxy
     private static bool Overlaps(DateTime aStart, DateTime aEnd, DateTime bStart, DateTime bEnd)
         => aStart < bEnd && bStart < aEnd;
 }
-
-

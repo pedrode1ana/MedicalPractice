@@ -2,8 +2,8 @@
 
 public class Patient
 {
-    private static int _nextID = 1;
-    public int Id { get; private set; } = _nextID++;
+    // Ids are assigned by the API; default to 0 when creating locally.
+    public int Id { get; set; }
 
     public string FirstName { get; set; } = "";
     public string LastName { get; set; } = "";

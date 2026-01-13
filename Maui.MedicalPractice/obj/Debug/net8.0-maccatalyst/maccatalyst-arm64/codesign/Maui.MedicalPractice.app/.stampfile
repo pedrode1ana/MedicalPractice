@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/pedrodelana/Projects/MedicalPractice/Maui.MedicalPractice/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/Entitlements.xcent /Users/pedrodelana/Projects/MedicalPractice/Maui.MedicalPractice/bin/Debug/net8.0-maccatalyst/maccatalyst-arm64/Maui.MedicalPractice.app

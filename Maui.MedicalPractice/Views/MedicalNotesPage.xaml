@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.MedicalPractice.Views.MedicalNotesPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="18">
+            <Label Text="Medical Notes" Style="{StaticResource Headline}"/>
+
+            <Grid ColumnDefinitions="*,Auto"
+                  RowDefinitions="3*,2*"
+                  ColumnSpacing="12"
+                  RowSpacing="12">
+                <Frame Grid.Row="0" Grid.ColumnSpan="2" Padding="10">
+                    <ListView ItemsSource="{Binding Notes}"
+                              SelectedItem="{Binding SelectedNote}"
+                              HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid ColumnDefinitions="*,*,Auto" ColumnSpacing="8">
+                                        <Label Grid.Column="0" Text="{Binding PatientId, StringFormat='Pt #{0}'}"/>
+                                        <Label Grid.Column="1" Text="{Binding PhysicianId, StringFormat='Dr #{0}'}"/>
+                                        <Label Grid.Column="2" Text="{Binding CreatedLocal, StringFormat='{0:g}'}"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="0" Padding="12">
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,*,*,Auto" ColumnSpacing="8" RowSpacing="8">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Patient"/>
+                        <Frame Grid.Row="0" Grid.Column="1" Padding="10">
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="6">
+                                <Label Text="{Binding SelectedPatientDisplay}" LineBreakMode="TailTruncation"/>
+                                <Label Grid.Column="1" Text="Select" TextColor="{StaticResource Gray500}" FontSize="12" VerticalOptions="Center"/>
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SelectPatientTapped"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Physician"/>
+                        <Frame Grid.Row="1" Grid.Column="1" Padding="10">
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="6">
+                                <Label Text="{Binding SelectedPhysicianDisplay}" LineBreakMode="TailTruncation"/>
+                                <Label Grid.Column="1" Text="Select" TextColor="{StaticResource Gray500}" FontSize="12" VerticalOptions="Center"/>
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SelectPhysicianTapped"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Label Grid.Row="2" Grid.Column="0" Text="Diagnoses"/>
+                        <Entry Grid.Row="2" Grid.Column="1" Text="{Binding Diagnoses}" Placeholder="Diagnoses"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Text="Prescriptions"/>
+                        <Editor Grid.Row="3" Grid.Column="1" Text="{Binding Prescriptions}" AutoSize="TextChanges" Placeholder="Prescriptions"/>
+
+                        <Label Grid.Row="4" Grid.Column="0" Text="Status"/>
+                        <Label Grid.Row="4" Grid.Column="1" Text="{Binding StatusMessage}" LineBreakMode="WordWrap"/>
+                    </Grid>
+                </Frame>
+
+                <Grid Grid.Row="1" Grid.Column="1" RowDefinitions="Auto,Auto,Auto" RowSpacing="8">
+                    <Button Grid.Row="0" Text="New" Clicked="NewClicked"/>
+                    <Button Grid.Row="1" Text="Save" Clicked="SaveClicked" BackgroundColor="Chartreuse" TextColor="Black"/>
+                    <Button Grid.Row="2" Text="Delete" Clicked="DeleteClicked" BackgroundColor="Crimson"/>
+                </Grid>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

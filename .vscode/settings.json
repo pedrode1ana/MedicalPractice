@@ -1,0 +1,7 @@
+{
+  "dotnetAcquisitionExtension.useExistingDotnet": true,
+  "dotnetAcquisitionExtension.existingDotnetPath": [
+    "/Users/pedrodelana/.dotnet/dotnet"
+  ],
+  "dotnet.defaultSdkVersion": "8.0.416"
+}

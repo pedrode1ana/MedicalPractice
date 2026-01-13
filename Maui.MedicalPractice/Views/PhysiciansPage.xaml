@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.MedicalPractice.Views.PhysiciansPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="18">
+            <Label Text="Physicians" Style="{StaticResource Headline}"/>
+
+            <Grid ColumnDefinitions="*,Auto"
+                  RowDefinitions="3*,2*"
+                  ColumnSpacing="12"
+                  RowSpacing="12">
+                <Frame Grid.Row="0" Grid.ColumnSpan="2" Padding="10">
+                    <ListView ItemsSource="{Binding Physicians}"
+                              SelectedItem="{Binding SelectedPhysician}"
+                              HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid ColumnDefinitions="2*,2*,2*" ColumnSpacing="8">
+                                        <Label Grid.Column="0" Text="{Binding LastName}"/>
+                                        <Label Grid.Column="1" Text="{Binding FirstName}"/>
+                                        <Label Grid.Column="2" Text="{Binding LicenseNumber}"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="0" Padding="12">
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnSpacing="8" RowSpacing="8">
+                        <Label Grid.Row="0" Grid.Column="0" Text="First Name"/>
+                        <Entry Grid.Row="0" Grid.Column="1" Text="{Binding FirstName}" Placeholder="Alex"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Last Name"/>
+                        <Entry Grid.Row="1" Grid.Column="1" Text="{Binding LastName}" Placeholder="Rivera"/>
+
+                        <Label Grid.Row="2" Grid.Column="0" Text="License #"/>
+                        <Entry Grid.Row="2" Grid.Column="1" Text="{Binding LicenseNumber}" Placeholder="ABC-1234"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Text="Graduation"/>
+                        <DatePicker Grid.Row="3" Grid.Column="1" Date="{Binding Graduation}"/>
+
+                        <Label Grid.Row="4" Grid.Column="0" Text="Specialization"/>
+                        <Entry Grid.Row="4" Grid.Column="1" Text="{Binding Specialization}" Placeholder="Internal Medicine"/>
+
+                        <Label Grid.Row="5" Grid.Column="0" Text="Status"/>
+                        <Label Grid.Row="5" Grid.Column="1" Text="{Binding StatusMessage}" LineBreakMode="WordWrap"/>
+                    </Grid>
+                </Frame>
+
+                <Grid Grid.Row="1" Grid.Column="1" RowDefinitions="Auto,Auto,Auto" RowSpacing="8">
+                    <Button Grid.Row="0" Text="New" Clicked="NewClicked"/>
+                    <Button Grid.Row="1" Text="Save" Clicked="SaveClicked" BackgroundColor="Chartreuse" TextColor="Black"/>
+                    <Button Grid.Row="2" Text="Delete" Clicked="DeleteClicked" BackgroundColor="Crimson"/>
+                </Grid>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

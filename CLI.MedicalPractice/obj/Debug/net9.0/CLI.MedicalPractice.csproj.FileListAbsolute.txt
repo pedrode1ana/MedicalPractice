@@ -16,3 +16,5 @@
 /Users/pedrodelana/Projects/MedicalPractice/CLI.MedicalPractice/bin/Debug/net9.0/Library.MedicalPractice.pdb
 /Users/pedrodelana/Projects/MedicalPractice/CLI.MedicalPractice/obj/Debug/net9.0/CLI.MedicalPractice.csproj.AssemblyReference.cache
 /Users/pedrodelana/Projects/MedicalPractice/CLI.MedicalPractice/obj/Debug/net9.0/CLI.Medi.D218E340.Up2Date
+/Users/pedrodelana/Projects/MedicalPractice/CLI.MedicalPractice/obj/Debug/net9.0/CLI.MedicalPractice.sourcelink.json
+/Users/pedrodelana/Projects/MedicalPractice/CLI.MedicalPractice/bin/Debug/net9.0/Newtonsoft.Json.dll

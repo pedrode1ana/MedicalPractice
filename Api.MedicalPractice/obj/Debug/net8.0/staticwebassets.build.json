@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "E2bBf9IOYsski4MpgGPfPAo5bKktRd5kSMLrzsDzPv8=",
+  "Source": "Api.MedicalPractice",
+  "BasePath": "_content/Api.MedicalPractice",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

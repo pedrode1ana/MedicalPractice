@@ -1,0 +1,65 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-maccatalyst
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Maui.MedicalPractice
+build_property.ProjectDir = /Users/pedrodelana/Projects/MedicalPractice/Maui.MedicalPractice/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[/Users/pedrodelana/Projects/MedicalPractice/Maui.MedicalPractice/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Maui.MedicalPractice.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[/Users/pedrodelana/Projects/MedicalPractice/Maui.MedicalPractice/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Maui.MedicalPractice.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[/Users/pedrodelana/Projects/MedicalPractice/Maui.MedicalPractice/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Maui.MedicalPractice.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Colors.xaml
+
+[/Users/pedrodelana/Projects/MedicalPractice/Maui.MedicalPractice/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Maui.MedicalPractice.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
+
+[/Users/pedrodelana/Projects/MedicalPractice/Maui.MedicalPractice/Views/AppointmentsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Maui.MedicalPractice.Views.AppointmentsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/AppointmentsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/AppointmentsPage.xaml
+
+[/Users/pedrodelana/Projects/MedicalPractice/Maui.MedicalPractice/Views/MedicalNotesPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Maui.MedicalPractice.Views.MedicalNotesPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/MedicalNotesPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/MedicalNotesPage.xaml
+
+[/Users/pedrodelana/Projects/MedicalPractice/Maui.MedicalPractice/Views/PatientsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Maui.MedicalPractice.Views.PatientsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/PatientsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/PatientsPage.xaml
+
+[/Users/pedrodelana/Projects/MedicalPractice/Maui.MedicalPractice/Views/PhysiciansPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Maui.MedicalPractice.Views.PhysiciansPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/PhysiciansPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/PhysiciansPage.xaml
